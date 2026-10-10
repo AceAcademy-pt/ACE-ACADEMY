@@ -668,6 +668,26 @@ section[id] { scroll-margin-top: var(--header-h-scrolled); }
 .testimonials__dot.is-active {
   background: var(--color-cream);
 }
+@media (max-width: 699px) {
+  .testimonials__carousel {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .testimonials__viewport {
+    order: 1;
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .testimonials__arrow--prev { order: 2; }
+  .testimonials__arrow--next { order: 3; }
+  .testimonial {
+    padding: 1.25rem;
+  }
+  .testimonial__text {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+}
 .testimonials__google {
   margin-top: 2.5rem;
   display: flex;
