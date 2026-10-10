@@ -144,6 +144,73 @@
   }
 
   /* -----------------------------------------------------------
+     Testimonials carousel
+  ----------------------------------------------------------- */
+  var testimonialsTrack = document.getElementById('testimonials-track');
+  if (testimonialsTrack) {
+    var slides = Array.prototype.slice.call(testimonialsTrack.children);
+    var prevBtn = document.querySelector('.testimonials__arrow--prev');
+    var nextBtn = document.querySelector('.testimonials__arrow--next');
+    var dotsWrap = document.getElementById('testimonials-dots');
+    var desktopMq = window.matchMedia('(min-width: 700px)');
+    var tIndex = 0;
+
+    var perView = function () { return desktopMq.matches ? 2 : 1; };
+    var maxIndex = function () { return Math.max(0, slides.length - perView()); };
+
+    var buildDots = function () {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      var pages = maxIndex() + 1;
+      for (var i = 0; i < pages; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'testimonials__dot';
+        dot.setAttribute('aria-label', 'Ir para avalia\u00e7\u00e3o ' + (i + 1));
+        dot.addEventListener('click', (function (page) {
+          return function () { goTo(page); };
+        })(i));
+        dotsWrap.appendChild(dot);
+      }
+    };
+
+    var update = function () {
+      var step = 100 / perView();
+      testimonialsTrack.style.transform = 'translateX(-' + (tIndex * step) + '%)';
+      if (prevBtn) prevBtn.disabled = tIndex <= 0;
+      if (nextBtn) nextBtn.disabled = tIndex >= maxIndex();
+      if (dotsWrap) {
+        Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
+          dot.classList.toggle('is-active', i === tIndex);
+        });
+      }
+    };
+
+    var goTo = function (i) {
+      tIndex = Math.min(Math.max(i, 0), maxIndex());
+      update();
+    };
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(tIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(tIndex + 1); });
+
+    buildDots();
+    update();
+
+    desktopMq.addEventListener('change', function () {
+      tIndex = Math.min(tIndex, maxIndex());
+      buildDots();
+      update();
+    });
+
+    window.addEventListener('resize', function () {
+      tIndex = Math.min(tIndex, maxIndex());
+      buildDots();
+      update();
+    });
+  }
+
+  /* -----------------------------------------------------------
      Footer year
   ----------------------------------------------------------- */
   var yearEl = document.getElementById('current-year');

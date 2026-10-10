@@ -213,15 +213,52 @@
         <div class="section-head">
           <h2 id="testemunhos-heading" class="section-title">O que dizem</h2>
         </div>
-        <div class="testimonials__grid">
-          <blockquote class="testimonial">
-            <p class="testimonial__text">"Vi através da minha janela de casa o João a treinar o Ace e pensei: 'que máquina!' Tive de descer para ir falar com ele, para me ajudar com a minha Zoey. O João ajudou-me imenso a que ela deixasse de ser reativa a pessoas e a outros cães durante os passeios, e agora obedece-me na rua."</p>
-            <footer class="testimonial__author">Luís Sousa, Zoey</footer>
-          </blockquote>
-          <blockquote class="testimonial">
-            <p class="testimonial__text">"Fui treinar com o João por recomendação de amigos, e tenho de dizer que me ajudou imenso. O Dom puxava-me em todos os passeios - estava mesmo desesperada, com dores nas costas. Em 2 aulas, o Dom já andava ao meu lado sem puxar! Não posso recomendar mais."</p>
-            <footer class="testimonial__author">Andreia Carvalho, Dom</footer>
-          </blockquote>
+        <div class="testimonials__carousel">
+          <button type="button" class="testimonials__arrow testimonials__arrow--prev" aria-label="Avaliação anterior" aria-controls="testimonials-track">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="testimonials__viewport">
+            <div class="testimonials__track" id="testimonials-track" role="group" aria-roledescription="carrossel" aria-label="Avaliações de clientes">
+              <blockquote class="testimonial">
+                <p class="testimonial__text">"Vi através da minha janela de casa o João a treinar o Ace e pensei: 'que máquina!' Tive de descer para ir falar com ele, para me ajudar com a minha Zoey. O João ajudou-me imenso a que ela deixasse de ser reativa a pessoas e a outros cães durante os passeios, e agora obedece-me na rua."</p>
+                <footer class="testimonial__author">Luís Sousa, Zoey</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial__text">"Fui treinar com o João por recomendação de amigos, e ajudou-me imenso. O meu cão puxava-me em todos os passeios e em 2 aulas, já andava ao meu lado sem puxar! Recomendo muito!"</p>
+                <footer class="testimonial__author">Andreia Carvalho</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial__text">"Salvou uma casa e uma família, ajudou a corrigir o nosso Kuma. João Paulo é um excelente profissional que, acima de tudo, ama o que faz."</p>
+                <footer class="testimonial__author">Antonio Batista, Kuma</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial__text">"O Boss sempre foi um cão cheio de personalidade, mas também bastante desobediente. Por vezes, era difícil conseguir que obedecesse e controlar certos comportamentos. Foi então que decidi colocá-lo na Ace Academy, e hoje posso dizer que foi uma das melhores decisões que tomei por ele. Um obrigado ao João por todo o trabalho, dedicação e ajuda na evolução do Boss."</p>
+                <footer class="testimonial__author">Bruno Teixeira, Boss</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial__text">"Experiência incrível! Recomendo fortemente!!!! 💕🐶🦴"</p>
+                <footer class="testimonial__author">Jéssica Freitas</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p class="testimonial__text">"O melhoooor! 🐶👏🏻👌🏻"</p>
+                <footer class="testimonial__author">Cris Alves</footer>
+              </blockquote>
+            </div>
+          </div>
+          <button type="button" class="testimonials__arrow testimonials__arrow--next" aria-label="Avaliação seguinte" aria-controls="testimonials-track">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="testimonials__dots" id="testimonials-dots"></div>
+        <div class="testimonials__google">
+          <svg class="testimonials__google-icon" width="28" height="28" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+            <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+            <path fill="#FBBC05" d="M11.69 28.18A13.9 13.9 0 0 1 10.9 24c0-1.45.25-2.86.69-4.18v-5.7H4.34A21.93 21.93 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+            <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+          </svg>
+          <p class="testimonials__google-text">Estas são só algumas. Vê todas as avaliações reais no Google.</p>
+          <a href="https://share.google/Hq1dlvSQM9kfoCVh8" target="_blank" rel="noopener" class="button button--outline">Ver avaliações no Google</a>
         </div>
       </div>
     </section>
@@ -246,12 +283,8 @@
               </dd>
             </div>
             <div class="contact__item">
-              <dt>Instalações</dt>
-              <dd>Rua António Enes, Porto</dd>
-            </div>
-            <div class="contact__item">
               <dt>Zona de atendimento ao domicílio</dt>
-              <dd>Área Metropolitana do Porto</dd>
+              <dd>Trabalhamos em todo o Grande Porto</dd>
             </div>
           </dl>
 
