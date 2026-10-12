@@ -175,8 +175,12 @@
     };
 
     var update = function () {
-      var step = 100 / perView();
-      testimonialsTrack.style.transform = 'translateX(-' + (tIndex * step) + '%)';
+      var target = slides[tIndex];
+      var base = slides[0];
+      var offset = (target && base)
+        ? (target.getBoundingClientRect().left - base.getBoundingClientRect().left)
+        : 0;
+      testimonialsTrack.style.transform = 'translateX(-' + offset + 'px)';
       if (prevBtn) prevBtn.disabled = tIndex <= 0;
       if (nextBtn) nextBtn.disabled = tIndex >= maxIndex();
       if (dotsWrap) {
